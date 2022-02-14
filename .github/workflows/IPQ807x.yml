@@ -71,9 +71,6 @@ jobs:
                 echo "CONFIG_PACKAGE_nss-firmware-ipq8074=y" >> .config
                 echo "CONFIG_PACKAGE_luci-theme-bootstrap=y" >> .config
                 echo "CONFIG_PACKAGE_kmod-qca-nss-dp=y\n" >> .config
-                echo "CONFIG_PACKAGE_dnsmasq-full=y" >> .config
-                echo "CONFIG_PACKAGE_tor=y" >> .config
-                echo "CONFIG_PACKAGE_ipset=y >>" >> .config
                 make defconfig
      
       - name: Download package sources
