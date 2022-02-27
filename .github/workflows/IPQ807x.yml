@@ -1,4 +1,4 @@
-name: Build IPQ8071
+name: Build IPQ807x
 on: [push]
 
 jobs:
