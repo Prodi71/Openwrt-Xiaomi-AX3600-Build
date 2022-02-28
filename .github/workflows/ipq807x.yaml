@@ -67,10 +67,10 @@ jobs:
                 echo "CONFIG_PACKAGE_luci-base=y" >> .config
                 echo "CONFIG_PACKAGE_luci-compat=y" >> .config
                 echo "CONFIG_PACKAGE_luci-app-firewall=y" >> .config
-                echo "CONFIG_PACKAGE_qca-ssdk-shell=y" >> .config
                 echo "CONFIG_PACKAGE_nss-firmware-ipq8074=y" >> .config
                 echo "CONFIG_PACKAGE_luci-theme-bootstrap=y" >> .config
                 echo "CONFIG_PACKAGE_kmod-qca-nss-dp=y\n" >> .config
+                echo "CONFIG_PACKAGE_qca-ssdk-shell=y\n" >> .config
                 make defconfig
      
       - name: Download package sources
