@@ -80,9 +80,11 @@ jobs:
                 echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-openvpn=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
-                echo "CONFIG_PACKAGE_openvpn-openssl=y\n" >> .config
+                echo "CONFIG_PACKAGE_openvpn-wolfssl=y\n" >> .config
+                echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
                 echo "CONFIG_PACKAGE_wireguard-tools=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
+                echo "CONFIG_PACKAGE_irqbalance=y\n" >> .config
                 make defconfig
      
       - name: Download package sources
