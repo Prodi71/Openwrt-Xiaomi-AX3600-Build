@@ -68,7 +68,6 @@ jobs:
                 echo "CONFIG_PACKAGE_luci-compat=y" >> .config
                 echo "CONFIG_PACKAGE_luci-app-firewall=y" >> .config
                 echo "CONFIG_PACKAGE_nss-firmware-ipq8074=y" >> .config
-                echo "CONFIG_PACKAGE_luci-theme-bootstrap=y" >> .config
                 echo "CONFIG_PACKAGE_dnsmasq-full=y\n" >> .config
                 echo "CONFIG_PACKAGE_tor=y" >> .config
                 echo "CONFIG_PACKAGE_ipset=y" >> .config
@@ -79,12 +78,12 @@ jobs:
                 echo "CONFIG_PACKAGE_luci-app-openvpn=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_openvpn-wolfssl=y\n" >> .config
-                echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
                 echo "CONFIG_PACKAGE_wireguard-tools=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_irqbalance=y\n" >> .config
+                echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
                 make defconfig
-     
+                   
       - name: Download package sources
         run: make download V=s
       - name: Build tools
