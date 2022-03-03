@@ -68,6 +68,7 @@ jobs:
                 echo "CONFIG_PACKAGE_luci-compat=y" >> .config
                 echo "CONFIG_PACKAGE_luci-app-firewall=y" >> .config
                 echo "CONFIG_PACKAGE_nss-firmware-ipq8074=y" >> .config
+                echo "CONFIG_PACKAGE_dnsmasq=n" >> .config
                 echo "CONFIG_PACKAGE_dnsmasq-full=y" >> .config
                 echo "CONFIG_PACKAGE_tor=y\n" >> .config
                 echo "CONFIG_PACKAGE_ipset=y\n" >> .config
