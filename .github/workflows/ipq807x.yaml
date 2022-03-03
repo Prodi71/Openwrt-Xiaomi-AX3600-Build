@@ -67,6 +67,9 @@ jobs:
                 echo "CONFIG_PACKAGE_luci-base=y" >> .config
                 echo "CONFIG_PACKAGE_luci-compat=y" >> .config
                 echo "CONFIG_PACKAGE_luci-app-firewall=y" >> .config
+                echo "CONFIG_PACKAGE_luci-app-openvpn=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_nss-firmware-ipq8074=y" >> .config
                 echo "CONFIG_PACKAGE_dnsmasq=n" >> .config
                 echo "CONFIG_PACKAGE_dnsmasq-full=y" >> .config
@@ -76,11 +79,8 @@ jobs:
                 echo "CONFIG_PACKAGE_qca-ssdk-shell=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-tun=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
-                echo "CONFIG_PACKAGE_luci-app-openvpn=y\n" >> .config
-                echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_openvpn-wolfssl=y\n" >> .config
                 echo "CONFIG_PACKAGE_wireguard-tools=y\n" >> .config
-                echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_irqbalance=y\n" >> .config
                 echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
                 make defconfig
