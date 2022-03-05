@@ -70,6 +70,7 @@ jobs:
                 echo "CONFIG_PACKAGE_luci-app-openvpn=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-adblock=y\n" >> .config
                 echo "CONFIG_PACKAGE_nss-firmware-ipq8074=y" >> .config
                 echo "CONFIG_PACKAGE_dnsmasq=n" >> .config
                 echo "CONFIG_PACKAGE_dnsmasq-full=y" >> .config
