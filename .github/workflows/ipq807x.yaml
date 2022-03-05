@@ -82,6 +82,7 @@ jobs:
                 echo "CONFIG_PACKAGE_kmod-qca-ssdk-nohnat=y" >> .config
                 echo "CONFIG_PACKAGE_kmod-tun=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
+                echo "CONFIG_PACKAGE_openvpn-openssl=y\n" >> .config
                 echo "CONFIG_PACKAGE_openvpn-wolfssl=y\n" >> .config
                 echo "CONFIG_PACKAGE_wireguard-tools=y\n" >> .config
                 echo "CONFIG_PACKAGE_irqbalance=y\n" >> .config
