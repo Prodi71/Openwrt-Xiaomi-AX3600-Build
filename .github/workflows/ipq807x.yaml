@@ -84,6 +84,9 @@ jobs:
                 echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_openvpn-wolfssl=y\n" >> .config
                 echo "CONFIG_PACKAGE_wireguard-tools=y\n" >> .config
+                echo "CONFIG_PACKAGE_kmod-fs-ksmbd=y\n" >> .config
+                echo "CONFIG_PACKAGE_kmod-nft-tproxy=y\n" >> .config
+                echo "CONFIG_PACKAGE_iptables-legacy=y\n" >> .config
                 echo "CONFIG_PACKAGE_irqbalance=y\n" >> .config
                 echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
                 make defconfig
