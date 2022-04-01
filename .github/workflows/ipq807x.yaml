@@ -1,54 +1,21 @@
-name: Build remote repo only if new commits were pushed
-on:
-  workflow_dispatch:
-  push:
-  schedule:
-    - cron: '0 12 * * *'
+name: Build IPQ807x
+on: [push]
+
 jobs:
-  check:
-    name: Check remote repo for new commits
-    runs-on: ubuntu-latest
-    steps:
-      - name: Use GitHub API to poll commits
-        run: |
-          curl -sL "https://api.github.com/repos/$REMOTE_REPOSITORY/commits?sha=$REMOTE_BRANCH&per_page=1" | jq -r '[.[]][0]' > commit.json
-        env:
-          REMOTE_REPOSITORY: robimarko/openwrt
-          REMOTE_BRANCH: ipq807x-5.15
-      - name: Calculate hours since last commit
-        id: calc
-        run: |
-          date="$(jq -r '.commit.author.date' commit.json)"
-          timestamp=$(date --utc -d "$date" +%s)
-          hours=$(( ( $(date --utc +%s) - $timestamp ) / 3600 ))
-          echo "Last commit date: $date"
-          echo "Hours since last commit: $hours"
-          echo "::set-output name=commit_age::$hours"
-    outputs:
-      commit_age: ${{ steps.calc.outputs.commit_age }}
-  build:
-    name: Build the remote repository
-    needs: check
-    runs-on: ubuntu-latest
-    if: ${{ needs.check.outputs.commit_age <= 24 || github.event_name == 'workflow_dispatch' }}
-    steps:
-      - name: Show inputs received from previous job
-        env:
-          COMMIT_AGE: ${{ needs.check.outputs.commit_age }}
-        run: |
-          echo "Build triggered with commits last pushed $COMMIT_AGE hours ago"
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          repository: robimarko/openwrt
-          ref: ipq807x-5.15
-      - name: Update and install feeds
-        run: |
-          ./scripts/feeds update -a
-          ./scripts/feeds install -a
-          ./scripts/feeds install -a
-      - name: Generate config for IPQ807x Generic
-        run: |
+    build:
+        name: Prepare and build IPQ807x generic images
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Update and install feeds
+              run: |
+                ./scripts/feeds update -a
+                ./scripts/feeds install -a
+            - name: Generate config for IPQ807x Generic
+              run: |
                 echo "CONFIG_TARGET_ipq807x=y" > .config
                 echo "CONFIG_TARGET_ipq807x_generic=y\n" >> .config
                 echo 'CONFIG_TARGET_ipq807x_generic_DEVICE_xiaomi_ax3600=y' >> .config
@@ -91,7 +58,7 @@ jobs:
                 echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
                 make defconfig
                    
-     - name: Download package sources
+      - name: Download package sources
               run: make download V=s
 
             - name: Build tools
