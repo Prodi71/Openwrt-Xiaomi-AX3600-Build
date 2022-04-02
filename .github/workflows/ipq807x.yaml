@@ -89,7 +89,9 @@ jobs:
                 #echo "CONFIG_PACKAGE_iptables-legacy=y\n" >> .config
                 echo "CONFIG_PACKAGE_irqbalance=y\n" >> .config
                 echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
+                echo "CONFIG_PACKAGE_wget-ssl=y" >> .config
                 echo "CONFIG_IPTABLES_NFTABLES=y" >> .config
+                echo "CONFIG_kmod-nf-nathelper-extra=y" >> .config
                 echo "CONFIG_PACKAGE_firewall=n" >> .config
                 echo "CONFIG_PACKAGE_ip6tables=n" >> .config
                 echo "CONFIG_PACKAGE_iptables=n" >> .config
