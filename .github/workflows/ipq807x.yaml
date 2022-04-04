@@ -77,18 +77,27 @@ jobs:
                 #echo "CONFIG_PACKAGE_dnsmasq-full=y" >> .config
                 #echo "CONFIG_PACKAGE_tor=y\n" >> .config
                 #echo "CONFIG_PACKAGE_tor-geoip=y\n" >> .config
-                #echo "CONFIG_PACKAGE_ipset=y\n" >> .config
+                echo "CONFIG_PACKAGE_ipset=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-qca-nss-dp=y\n" >> .config
                 echo "CONFIG_PACKAGE_qca-ssdk-shell=y\n" >> .config
-                #echo "CONFIG_PACKAGE_kmod-qca-ssdk-nohnat=y" >> .config
+                echo "CONFIG_PACKAGE_kmod-qca-ssdk-nohnat=y" >> .config
                 echo "CONFIG_PACKAGE_kmod-tun=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_openvpn-wolfssl=y\n" >> .config
                 echo "CONFIG_PACKAGE_wireguard-tools=y\n" >> .config
                 echo "CONFIG_PACKAGE_iptables-legacy=y\n" >> .config
+                echo "CONFIG_PACKAGE_iptables-mod-ipopt=y" >> .config
+                echo "CONFIG_PACKAGE_kmod-asn1-decoder=y" >> .config
                 echo "CONFIG_PACKAGE_irqbalance=y\n" >> .config
                 echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
                 echo "CONFIG_PACKAGE_wget-ssl=y" >> .config
+                echo "CONFIG_PACKAGE_kmod-ifb=y" >> .config
+                echo "CONFIG_PACKAGE_kmod-ipt-core=y" >> .config
+                echo "CONFIG_PACKAGE_kmod-ipt-ipopt=y" >> .config
+                echo "CONFIG_PACKAGE_kmod-lib-textsearch=y" >> .config
+                echo "CONFIG_PACKAGE_kmod-nf-ipt=y" >> .config
+                echo "CONFIG_PACKAGE_kmod-nf-nathelper=y" >> .config
+                echo "CONFIG_PACKAGE_kmod-nf-nathelper-extra=y" >> .config
                 make defconfig
      
       - name: Download package sources
