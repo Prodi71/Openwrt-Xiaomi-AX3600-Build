@@ -69,8 +69,9 @@ jobs:
                 echo "CONFIG_PACKAGE_luci-compat=y" >> .config
                 echo "CONFIG_PACKAGE_luci-app-firewall=y" >> .config
                 echo "CONFIG_PACKAGE_luci-app-openvpn=y\n" >> .config
-                echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
-                echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
+                echo "CONFIG_PACKAGE_openssl-util=y" >> .config
+                echo "CONFIG_LIBCURL_OPENSSL=y" >> .config
+                #echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-adblock=y\n" >> .config
                 echo "CONFIG_PACKAGE_nss-firmware-ipq8074=y" >> .config
                 #echo "CONFIG_PACKAGE_dnsmasq=n" >> .config
