@@ -88,7 +88,7 @@ jobs:
                 echo "CONFIG_PACKAGE_wireguard-tools=y\n" >> .config
                 echo "CONFIG_PACKAGE_iptables-legacy=y\n" >> .config
                 echo "CONFIG_PACKAGE_iptables-mod-ipopt=y" >> .config
-                echo "CONFIG_PACKAGE_kmod-asn1-decoder=y" >> .config
+                echo "CONFIG_PACKAGE_kmod-ipt-offload=y" >> .config
                 echo "CONFIG_PACKAGE_irqbalance=y\n" >> .config
                 echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
                 echo "CONFIG_PACKAGE_wget-ssl=y" >> .config
