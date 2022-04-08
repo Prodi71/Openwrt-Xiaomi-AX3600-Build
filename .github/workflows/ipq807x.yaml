@@ -56,7 +56,6 @@ jobs:
                 echo 'CONFIG_TARGET_BOARD="ipq807x"' >> .config
                 echo 'CONFIG_TARGET_SUBTARGET="generic"' >> .config
                 echo 'CONFIG_TARGET_PROFILE="DEVICE_xiaomi_ax3600"' >> .config
-                #echo 'CONFIG_ALL_KMODS=y\n' >> .config
                 echo "CONFIG_TARGET_PER_DEVICE_ROOTFS=y\n" >> .config
                 echo "CONFIG_TARGET_ROOTFS_INITRAMFS=y\n" >> .config
                 echo "CONFIG_TARGET_INITRAMFS_COMPRESSION_ZSTD=y\n" >> .config
@@ -64,6 +63,7 @@ jobs:
                 echo 'CONFIG_TARGET_SQUASHFS_BLOCK_SIZE=256' >> .config
                 echo 'CONFIG_TARGET_UBIFS_FREE_SPACE_FIXUP=y' >> .config
                 echo 'CONFIG_TARGET_OPTIMIZATION="-Os -pipe -mcpu=cortex-a53"' >> .config
+                echo 'CONFIG_ALL_KMODS=y\n' >> .config
                 echo "CONFIG_PACKAGE_luci=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-base=y" >> .config
                 echo "CONFIG_PACKAGE_luci-compat=y" >> .config
@@ -85,7 +85,6 @@ jobs:
                 #echo "CONFIG_PACKAGE_kmod-qca-ssdk-nohnat=y" >> .config
                 echo "CONFIG_PACKAGE_kmod-tun=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
-                echo "CONFIG_PACKAGE_openvpn-wolfssl=y\n" >> .config
                 echo "CONFIG_PACKAGE_wireguard-tools=y\n" >> .config
                 echo "CONFIG_PACKAGE_iptables-legacy=y\n" >> .config
                 echo "CONFIG_PACKAGE_iptables-mod-ipopt=y" >> .config
@@ -93,13 +92,6 @@ jobs:
                 echo "CONFIG_PACKAGE_irqbalance=y\n" >> .config
                 echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
                 echo "CONFIG_PACKAGE_wget-ssl=y" >> .config
-                echo "CONFIG_PACKAGE_kmod-ifb=y" >> .config
-                echo "CONFIG_PACKAGE_kmod-ipt-core=y" >> .config
-                echo "CONFIG_PACKAGE_kmod-ipt-ipopt=y" >> .config
-                echo "CONFIG_PACKAGE_kmod-lib-textsearch=y" >> .config
-                echo "CONFIG_PACKAGE_kmod-nf-ipt=y" >> .config
-                echo "CONFIG_PACKAGE_kmod-nf-nathelper=y" >> .config
-                echo "CONFIG_PACKAGE_kmod-nf-nathelper-extra=y" >> .config
                 make defconfig
      
       - name: Download package sources
