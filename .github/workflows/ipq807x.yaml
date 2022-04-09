@@ -63,7 +63,7 @@ jobs:
                 echo 'CONFIG_TARGET_SQUASHFS_BLOCK_SIZE=256' >> .config
                 echo 'CONFIG_TARGET_UBIFS_FREE_SPACE_FIXUP=y' >> .config
                 echo 'CONFIG_TARGET_OPTIMIZATION="-Os -pipe -mcpu=cortex-a53"' >> .config
-                echo 'CONFIG_ALL_KMODS=y\n' >> .config
+                # echo 'CONFIG_ALL_KMODS=y\n' >> .config
                 echo "CONFIG_PACKAGE_luci=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-base=y" >> .config
                 echo "CONFIG_PACKAGE_luci-compat=y" >> .config
@@ -72,6 +72,7 @@ jobs:
                 echo "CONFIG_PACKAGE_openssl-util=y" >> .config
                 echo "CONFIG_PACKAGE_openvpn-openssl=y" >> .config
                 echo "CONFIG_LIBCURL_OPENSSL=y" >> .config
+                echo "CONFIG_PACKAGE_wireguard=y" >> .config
                 echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-adblock=y\n" >> .config
                 echo "CONFIG_PACKAGE_nss-firmware-ipq8074=y" >> .config
@@ -85,9 +86,8 @@ jobs:
                 echo "CONFIG_PACKAGE_kmod-tun=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_wireguard-tools=y\n" >> .config
-                echo "CONFIG_PACKAGE_iptables-legacy=y\n" >> .config
-                echo "CONFIG_PACKAGE_iptables-mod-ipopt=y" >> .config
                 echo "CONFIG_PACKAGE_kmod-ipt-offload=y" >> .config
+                echo "CONFIG_PACKAGE_kmod-nf-nathelper-extra=y\n" >> .config
                 echo "CONFIG_PACKAGE_irqbalance=y\n" >> .config
                 echo "CONFIG_PACKAGE_wpad-openssl=y\n" >> .config
                 echo "CONFIG_PACKAGE_wget-ssl=y" >> .config
